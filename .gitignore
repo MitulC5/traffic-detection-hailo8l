@@ -1,0 +1,38 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Model files (large binaries)
+*.har
+*.hef
+*.onnx
+*.pt
+*.weights
+
+# Calibration data
+calib_images/
+calib_npy/
+
+# Training runs
+runs/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,3 @@
+normalization1 = normalization([0.0, 0.0, 0.0], [255.0, 255.0, 255.0])
+quantization_param([conv42, conv53, conv63], force_range_out=[0.0, 1.0])
+nms_postprocess(meta_arch=yolov8, engine=cpu, classes=8, nms_scores_th=0.7, nms_iou_th=0.45)

@@ -1,0 +1,16 @@
+{
+  "detection_threshold": 0.7,
+  "max_boxes": 100,
+  "label_offset": 0,
+  "labels": [
+    "background",
+    "pedestrian",
+    "bicycle",
+    "car",
+    "motorcycle",
+    "auto_rickshaw",
+    "bus",
+    "commercial_vehicle",
+    "truck"
+  ]
+}
