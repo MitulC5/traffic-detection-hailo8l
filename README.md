@@ -101,7 +101,6 @@ traffic-detection-hailo8l/
 ├── .gitignore                   # Git ignore rules
 │
 ├── inference/                   # Inference scripts
-│   ├── cpu_nms_inference.py     # Standalone CPU NMS inference
 │   ├── detection.py             # GStreamer real-time pipeline
 │   └── labels.json              # Class labels and config
 │
@@ -174,7 +173,7 @@ Transfer the output `.hef` file to your Raspberry Pi 5.
 
 ### Step 5: Inference
 
-#### Real-Time Camera/Image Inference (GStreamer)
+Run real-time detection using the GStreamer pipeline:
 
 ```bash
 python inference/detection.py
@@ -193,7 +192,7 @@ python inference/detection.py
 | Hailo DFC optimize | ✅ Complete |
 | Hailo DFC compile (HEF) | ✅ Complete |
 | NMS configuration | ✅ Configured |
-| CPU NMS inference testing | 🔄 In Progress |
+| GStreamer inference testing | 🔄 In Progress |
 | GStreamer pipeline testing | 🔄 In Progress |
 | Real-time performance benchmarking | ⬚ Planned |
 

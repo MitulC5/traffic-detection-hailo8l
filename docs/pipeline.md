@@ -138,18 +138,7 @@ The output `.hef` file is the deployable binary for the Hailo-8L accelerator.
 
 ## 5. HailoRT Inference on Raspberry Pi 5
 
-### Option A: Standalone CPU NMS Inference
-
-Use `inference/cpu_nms_inference.py` for single-image inference:
-
-```bash
-python inference/cpu_nms_inference.py \
-  --hef best_optimized.hef \
-  --image test.jpg \
-  --labels inference/labels.json
-```
-
-### Option B: GStreamer Real-Time Pipeline
+### GStreamer Real-Time Pipeline
 
 Use `inference/detection.py` for real-time camera/video inference via GStreamer:
 
@@ -168,7 +157,7 @@ This uses the Hailo GStreamer detection app framework which handles:
 Ensure these are installed on the Raspberry Pi 5:
 - **HailoRT** — Hailo runtime library
 - **hailo-platform** — Python bindings for HailoRT
-- **GStreamer 1.0** — For real-time pipeline (Option B)
+- **GStreamer 1.0** — For real-time pipeline
 - **OpenCV** — For image processing and visualization
 
 ---
