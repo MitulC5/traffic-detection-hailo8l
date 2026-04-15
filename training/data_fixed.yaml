@@ -1,0 +1,14 @@
+path: /kaggle/working/dataset_fixed
+train: train/images
+val: val/images
+test: test/images
+nc: 8
+names:
+  - pedestrian
+  - bicycle
+  - car
+  - motorcycle
+  - auto_rickshaw
+  - bus
+  - commercial_vehicle
+  - truck

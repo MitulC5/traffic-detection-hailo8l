@@ -1,0 +1,37 @@
+from ultralytics import YOLO
+
+model = YOLO('yolov8n.pt')
+model.train(
+    data='/kaggle/working/data_fixed.yaml',
+    epochs=100,
+    imgsz=640,
+    batch=64,
+    device='0,1',
+    workers=2,
+    cache='disk',
+    patience=30,
+    save_period=5,
+    project='/kaggle/working/runs',
+    name='road-traffic-8n-640px-hailo',
+    mosaic=1.0,
+    mixup=0.05,
+    copy_paste=0.3,
+    hsv_h=0.015,
+    hsv_s=0.7,
+    hsv_v=0.4,
+    degrees=5.0,
+    translate=0.1,
+    scale=0.5,
+    shear=2.0,
+    perspective=0.0001,
+    flipud=0.0,
+    optimizer='SGD',
+    lr0=0.01,
+    lrf=0.01,
+    momentum=0.937,
+    weight_decay=0.0005,
+    warmup_epochs=3.0,
+    amp=True,
+    close_mosaic=10,
+    val=True
+)

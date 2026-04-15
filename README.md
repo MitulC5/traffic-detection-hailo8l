@@ -218,6 +218,49 @@ This project is provided as-is for educational and research purposes.
 
 ---
 
+## ⚠️ Dataset Label Bug (Fixed)
+
+The DriveIndia dataset contains a serialization bug where YOLO annotation
+files use literal `\n` escape sequences instead of real newlines. This caused
+Ultralytics to silently discard **85% of training labels** (20,217 of 23,718
+train images, 2,035 of 2,323 val images).
+
+Root cause: the dataset export script used `"\\n".join(rows)` instead of
+`"\n".join(rows)`, writing 2-character escape sequences instead of actual
+newline bytes.
+
+Run before training:
+```bash
+python dataset/fix_labels.py
+python dataset/fix_image_symlinks.py
+```
+
+Note: image directories must be real directories (not symlinks) or Ultralytics
+resolves the symlink back to the original corrupt label path.
+
+---
+
+## Training
+
+Trained on Kaggle (2× Tesla T4 GPU, DDP) on the fixed 8-class dataset.
+
+| Setting | Value |
+|---|---|
+| Model | YOLOv8n |
+| Train images | 23,718 (after fix) |
+| Val images | 2,323 (after fix) |
+| Epochs | 100 |
+| Batch | 64 (32 per GPU) |
+| Image size | 640 |
+| Optimizer | SGD |
+| mAP@0.5 | 76%+ |
+
+```bash
+python training/train.py
+```
+
+---
+
 <p align="center">
   <b>Built with ❤️ for Edge AI</b><br/>
   Raspberry Pi 5 • Hailo-8L • YOLOv8 • GStreamer
