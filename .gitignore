@@ -36,3 +36,8 @@ runs/
 .idea/
 *.swp
 *.swo
+*.ini
+
+inference/detection_pipeline.py
+
+scratchpad.md

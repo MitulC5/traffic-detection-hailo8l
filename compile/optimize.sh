@@ -5,5 +5,5 @@
 hailo optimize best_clean.har \
   --hw-arch hailo8l \
   --calib-set-path calib_npy \
-  --model-script nms_compile.alls \
+  --model-script nms.alls \
   --output-har-path best_optimized.har

@@ -1,9 +1,8 @@
 {
-  "detection_threshold": 0.7,
-  "max_boxes": 100,
-  "label_offset": 0,
+  "detection_threshold": 0.3,
+  "max_boxes": 200,
+  "output_activation": "none",
   "labels": [
-    "background",
     "pedestrian",
     "bicycle",
     "car",

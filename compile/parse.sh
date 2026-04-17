@@ -1,7 +1,7 @@
 #!/bin/bash
 # Parse ONNX model to Hailo Archive (HAR) format
 # Selects the 6 YOLOv8n detection head end-nodes for proper NMS integration
-
+#explain why end nodes are needed. 
 hailo parser onnx best.onnx \
   --hw-arch hailo8l \
   --end-node-names \

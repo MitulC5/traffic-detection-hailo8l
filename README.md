@@ -192,9 +192,10 @@ python inference/detection.py
 | Hailo DFC optimize | ✅ Complete |
 | Hailo DFC compile (HEF) | ✅ Complete |
 | NMS configuration | ✅ Configured |
-| GStreamer inference testing | 🔄 In Progress |
-| GStreamer pipeline testing | 🔄 In Progress |
-| Real-time performance benchmarking | ⬚ Planned |
+| GStreamer inference testing | ✅ Complete |
+| GStreamer pipeline testing | ✅ Complete |
+| Real-time performance benchmarking | ✅ 30 FPS Achieved |
+| Object tracking integration | ✅ Complete (Class ID -1) |
 
 ---
 
@@ -207,6 +208,7 @@ python inference/detection.py
 | **HEF output naming** | Filename derived from internal network name | Check compiler logs, rename after build |
 | **Calibration format** | `hailo optimize` requires `.npy`, not `.jpg` | Convert using cv2 + numpy script |
 | **Calibration path** | Relative path resolved from CWD | Use absolute path or run from correct dir |
+| **Low-light Detection** | Lower accuracy in evening/night scenarios | Needs augmentation or night training data |
 
 > 📖 See [docs/troubleshooting.md](docs/troubleshooting.md) for detailed solutions.
 

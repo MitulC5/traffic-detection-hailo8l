@@ -2,7 +2,9 @@
 detection.py — GStreamer-based real-time detection pipeline for Hailo-8L
 Uses the Hailo GStreamer detection app framework with a custom callback
 for real-time traffic object detection on Raspberry Pi 5.
+This is a basic incomplete pipeline which inherits the original detection_pipeline from hailo-apps.
 """
+
 
 from pathlib import Path
 import gi
