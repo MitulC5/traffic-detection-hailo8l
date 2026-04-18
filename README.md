@@ -12,7 +12,7 @@
 
 ---
 
-# 🚦 Traffic Detection — Hailo-8L
+# Traffic Detection — Hailo-8L
 
 **Custom 8-class traffic object detection** using YOLOv8n, compiled and deployed on **Raspberry Pi 5 + Hailo-8L NPU** accelerator.
 
@@ -20,7 +20,7 @@ Achieve real-time traffic detection at the edge — pedestrians, vehicles, bicyc
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Detection Classes](#detection-classes)
@@ -185,17 +185,16 @@ python inference/detection.py
 
 | Milestone | Status |
 |-----------|--------|
-| Custom dataset collection | ✅ Complete |
-| YOLOv8n training (8 classes) | ✅ Complete |
-| ONNX export | ✅ Complete |
-| Hailo DFC parse | ✅ Complete |
-| Hailo DFC optimize | ✅ Complete |
-| Hailo DFC compile (HEF) | ✅ Complete |
-| NMS configuration | ✅ Configured |
-| GStreamer inference testing | ✅ Complete |
-| GStreamer pipeline testing | ✅ Complete |
-| Real-time performance benchmarking | ✅ 30 FPS Achieved |
-| Object tracking integration | ✅ Complete (Class ID -1) |
+| Custom dataset collection | Complete |
+| YOLOv8n training (8 classes) | Complete |
+| ONNX export | Complete |
+| Hailo DFC parse | Complete |
+| Hailo DFC optimize | Complete |
+| Hailo DFC compile (HEF) | Complete |
+| NMS configuration | Configured |
+| GStreamer inference testing | Complete |
+| GStreamer pipeline testing | Complete |
+| Real-time performance benchmarking | 30 FPS Achieved |
 
 ---
 
@@ -210,7 +209,7 @@ python inference/detection.py
 | **Calibration path** | Relative path resolved from CWD | Use absolute path or run from correct dir |
 | **Low-light Detection** | Lower accuracy in evening/night scenarios | Needs augmentation or night training data |
 
-> 📖 See [docs/troubleshooting.md](docs/troubleshooting.md) for detailed solutions.
+> Note: See [docs/troubleshooting.md](docs/troubleshooting.md) for detailed solutions.
 
 ---
 
@@ -220,9 +219,9 @@ This project is provided as-is for educational and research purposes.
 
 ---
 
-## ⚠️ Dataset Label Bug (Fixed)
+## Dataset Label Bug (Fixed)
 
-The DriveIndia dataset contains a serialization bug where YOLO annotation
+The DriveIndia (https://arxiv.org/html/2507.19912v3) dataset contains a serialization bug where YOLO annotation
 files use literal `\n` escape sequences instead of real newlines. This caused
 Ultralytics to silently discard **85% of training labels** (20,217 of 23,718
 train images, 2,035 of 2,323 val images).
@@ -264,6 +263,6 @@ python training/train.py
 ---
 
 <p align="center">
-  <b>Built with ❤️ for Edge AI</b><br/>
+  <b>Built for Edge AI</b><br/>
   Raspberry Pi 5 • Hailo-8L • YOLOv8 • GStreamer
 </p>
