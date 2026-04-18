@@ -34,7 +34,7 @@ Achieve real-time traffic detection at the edge — pedestrians, vehicles, bicyc
   - [Step 5: Inference](#step-5-inference)
 - [Current Status](#current-status)
 - [Known Issues](#known-issues)
-- [License](#license)
+
 
 ---
 
@@ -74,7 +74,7 @@ The entire inference runs on the Hailo-8L accelerator with CPU-based NMS postpro
 | **SBC** | Raspberry Pi 5 (8GB RAM) |
 | **NPU** | Hailo-8L M.2 AI Accelerator |
 | **M.2 HAT** | Raspberry Pi AI HAT / M.2 HAT+ |
-| **Storage** | 32GB+ microSD (Class 10/U3) |
+| **Storage** | 16GB+ microSD (Class 10/U3) |
 | **Camera** | USB webcam or Raspberry Pi Camera Module |
 
 ### Software
@@ -88,7 +88,7 @@ The entire inference runs on the Hailo-8L accelerator with CPU-based NMS postpro
 | **OpenCV** | 4.x | Image processing |
 | **Ultralytics** | 8.x | YOLOv8 training & export |
 
-> **Note:** The Hailo Dataflow Compiler (DFC) runs on an **x86 Linux host** (Ubuntu 20.04/22.04). The compiled `.hef` file is then transferred to the Raspberry Pi for inference.
+> **Note:** The Hailo Dataflow Compiler (DFC) runs on an **x86 Linux host** (Ubuntu 20.04/22.04). I used WSL and it works just fine. The compiled `.hef` file is then transferred to the Raspberry Pi for inference.
 
 ---
 
@@ -102,7 +102,7 @@ traffic-detection-hailo8l/
 │
 ├── inference/                   # Inference scripts
 │   ├── detection.py             # GStreamer real-time pipeline
-│   └── labels.json              # Class labels and config
+│   └── traffic_labels.json              # Class labels and config
 │
 ├── compile/                     # Hailo DFC compilation scripts
 │   ├── parse.sh                 # ONNX → HAR conversion
@@ -185,16 +185,16 @@ python inference/detection.py
 
 | Milestone | Status |
 |-----------|--------|
-| Custom dataset collection | Complete |
-| YOLOv8n training (8 classes) | Complete |
-| ONNX export | Complete |
-| Hailo DFC parse | Complete |
-| Hailo DFC optimize | Complete |
-| Hailo DFC compile (HEF) | Complete |
-| NMS configuration | Configured |
-| GStreamer inference testing | Complete |
-| GStreamer pipeline testing | Complete |
-| Real-time performance benchmarking | 30 FPS Achieved |
+| Custom dataset collection | ✅ Complete |
+| YOLOv8n training (8 classes) | ✅ Complete |
+| ONNX export | ✅ Complete |
+| Hailo DFC parse | ✅ Complete |
+| Hailo DFC optimize | ✅ Complete |
+| Hailo DFC compile (HEF) | ✅ Complete |
+| NMS configuration | ✅ Configured |
+| GStreamer inference testing | ✅ Complete |
+| GStreamer pipeline testing | ✅ Complete |
+| Real-time performance benchmarking | ✅ 30 FPS Achieved |
 
 ---
 
@@ -210,12 +210,6 @@ python inference/detection.py
 | **Low-light Detection** | Lower accuracy in evening/night scenarios | Needs augmentation or night training data |
 
 > Note: See [docs/troubleshooting.md](docs/troubleshooting.md) for detailed solutions.
-
----
-
-## License
-
-This project is provided as-is for educational and research purposes.
 
 ---
 
