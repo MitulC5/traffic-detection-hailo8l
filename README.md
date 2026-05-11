@@ -23,6 +23,7 @@ Achieve real-time traffic detection at the edge — pedestrians, vehicles, bicyc
 ## Table of Contents
 
 - [Overview](#overview)
+- [Demo](#demo)
 - [Detection Classes](#detection-classes)
 - [Hardware & Software Requirements](#hardware--software-requirements)
 - [Folder Structure](#folder-structure)
@@ -48,6 +49,12 @@ This project implements an end-to-end pipeline for deploying a custom-trained YO
 4. **Deploy** on Raspberry Pi 5 with Hailo-8L NPU for real-time inference
 
 The entire inference runs on the Hailo-8L accelerator with CPU-based NMS postprocessing, delivering efficient real-time detection suitable for traffic monitoring, smart city, and ADAS prototyping applications.
+
+---
+
+## Demo
+
+https://github.com/user-attachments/assets/5721af2c-4b5d-4c78-9f50-ef50d61d192d
 
 ---
 
@@ -195,6 +202,7 @@ python inference/detection.py
 | GStreamer inference testing | ✅ Complete |
 | GStreamer pipeline testing | ✅ Complete |
 | Real-time performance benchmarking | ✅ 30 FPS Achieved |
+| Fine tune the model | 🔄 In Progress | 
 
 ---
 
