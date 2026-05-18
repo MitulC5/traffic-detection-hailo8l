@@ -53,6 +53,8 @@ The entire inference runs on the Hailo-8L accelerator with CPU-based NMS postpro
 ---
 
 ## Demo
+**Note on demo quality**: Inference runs at an average of 30 FPS.  The recorded video is not fully representative of runtime performance because the screen capture introduced lag and visual glitches.  
+
 
 https://github.com/user-attachments/assets/5721af2c-4b5d-4c78-9f50-ef50d61d192d
 
